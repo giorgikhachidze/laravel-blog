@@ -11,6 +11,14 @@
 |
 */
 
+Route::group(['prefix'=>'backend', 'namespace'=>'Backend', 'middleware'=>['auth']], function(){
+    Route::get('/', 'DashboardController@dashboard')->name('backend.index');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
