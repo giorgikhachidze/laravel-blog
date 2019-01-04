@@ -12,3 +12,13 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+.rounded-top-0 {
+  border-top-left-radius: 0!important;
+  border-top-right-radius: 0!important;
+}
+
+.rounded-bottom-0 {
+  border-bottom-left-radius: 0!important;
+  border-bottom-right-radius: 0!important;
+}
