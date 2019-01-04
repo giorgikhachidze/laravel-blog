@@ -38,7 +38,7 @@
 
         <div class="row mt-4">
             <div class="col-md-6 col-sm-6">
-                <a class="btn btn-block btn-primary rounded-bottom-0" href="#">კატეგორიის დამატება</a>
+            <a class="btn btn-block btn-primary rounded-bottom-0" href="{{route('backend.category.create')}}">კატეგორიის დამატება</a>
                 <div class="list-group mb-2">
                     <a class="list-group-item list-group-item-action rounded-top-0" href="#">
                         <h4 class="h4">პირველი კატეგორია</h4>
