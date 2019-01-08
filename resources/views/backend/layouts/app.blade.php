@@ -40,7 +40,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('backend.category.index')}}">კატეგორიები</a>
-                            <a class="dropdown-item" href="#">რესურსები</a>
+                            <a class="dropdown-item" href="{{route('backend.article.index')}}">რესურსები</a>
                         </div>
                     </li>
                     </ul>

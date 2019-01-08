@@ -14,6 +14,7 @@
 Route::group(['prefix'=>'backend', 'namespace'=>'Backend', 'middleware'=>['auth']], function(){
     Route::get('/', 'DashboardController@dashboard')->name('backend.index');
     Route::resource('/category', 'CategoryController', ['as'=>'backend']);
+    Route::resource('/article', 'ArticleController', ['as'=>'backend']);
 });
 
 Route::get('/', function () {
