@@ -22,6 +22,7 @@ class CreateArticlesTable extends Migration
             $table->string('image')->nullable();
             $table->boolean('image_status')->nullable();
             $table->string('meta_title')->nullable();
+            $table->string('meta_description')->nullable();
             $table->string('meta_keyword')->nullable();
             $table->boolean('published');
             $table->integer('viewed')->nullable();
