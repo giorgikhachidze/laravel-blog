@@ -6,7 +6,7 @@
     @component('backend.components.breadcrumb')
         @slot('title') კატეგორიის დამატება @endslot
         @slot('parent') მთავარი @endslot
-        @slot('active') <a href="{{route('backend.category.index')}}">კატეგორიის დამატება</a> / კატეგორიის დამატება @endslot
+        @slot('active') <a href="{{route('backend.category.index')}}">კატეგორიების სია</a> / კატეგორიის დამატება @endslot
     @endcomponent
 
     <hr>

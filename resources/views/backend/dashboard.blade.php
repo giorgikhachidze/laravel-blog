@@ -58,7 +58,7 @@
             </div>
 
             <div class="col-md-6 col-sm-6">
-                <a class="btn btn-block btn-primary rounded-bottom-0" href="#">სიახლეების დამატება</a>
+                <a class="btn btn-block btn-primary rounded-bottom-0" href="{{route('backend.article.create')}}">სიახლის დამატება</a>
                 <div class="list-group mb-2">
                     @if (count($articles) !== 0)
                         @foreach ($articles as $article)

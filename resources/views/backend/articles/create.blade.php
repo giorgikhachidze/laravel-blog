@@ -6,7 +6,7 @@
     @component('backend.components.breadcrumb')
         @slot('title') სიახლის დამატება @endslot
         @slot('parent') მთავარი @endslot
-        @slot('active') სიახლის დამატება @endslot
+        @slot('active') <a href="{{route('backend.article.index')}}">სიახლეების სია</a> / სიახლის დამატება @endslot
     @endcomponent
 
     <hr>
