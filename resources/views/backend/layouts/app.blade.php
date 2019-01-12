@@ -34,13 +34,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{route('backend.index')}}">მოწყოფილობების დაფა</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         ბლოგი
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('backend.category.index')}}">კატეგორიები</a>
-                            <a class="dropdown-item" href="{{route('backend.article.index')}}">რესურსები</a>
+                            <a class="dropdown-item" href="{{route('backend.article.index')}}">სიახლეები</a>
                         </div>
                     </li>
                     </ul>

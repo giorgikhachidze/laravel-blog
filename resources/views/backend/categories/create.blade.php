@@ -1,12 +1,12 @@
 @extends('backend.layouts.app')
 
 @section('content')
-    
+
 <div class="container">
     @component('backend.components.breadcrumb')
         @slot('title') კატეგორიის დამატება @endslot
         @slot('parent') მთავარი @endslot
-        @slot('active') კატეგორია @endslot
+        @slot('active') <a href="{{route('backend.category.index')}}">კატეგორიის დამატება</a> / კატეგორიის დამატება @endslot
     @endcomponent
 
     <hr>

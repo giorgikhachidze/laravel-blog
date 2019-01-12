@@ -6,7 +6,7 @@
     @component('backend.components.breadcrumb')
         @slot('title') სიახლის დამატება @endslot
         @slot('parent') მთავარი @endslot
-        @slot('active') სიახლე @endslot
+        @slot('active') სიახლის დამატება @endslot
     @endcomponent
 
     <hr>
