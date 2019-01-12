@@ -18,7 +18,7 @@ Route::group(['prefix'=>'backend', 'namespace'=>'Backend', 'middleware'=>['auth'
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('blog.index');
 });
 
 Auth::routes();

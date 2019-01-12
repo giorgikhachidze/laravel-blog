@@ -179,6 +179,11 @@ return [
          * Laravel Blog Packages
          */
         Unisharp\Ckeditor\ServiceProvider::class,
+
+        /**
+         * Own providers
+         */
+        App\Providers\BlogServiceProvider::class,
     ],
 
     /*
