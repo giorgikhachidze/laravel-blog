@@ -17,6 +17,9 @@ Route::group(['prefix'=>'backend', 'namespace'=>'Backend', 'middleware'=>['auth'
     Route::resource('/article', 'ArticleController', ['as'=>'backend']);
 });
 
+Route::get('/blog/category/{slug?}', 'BlogController@category')->name('category');
+Route::get('/blog/article/{slug?}', 'BlogController@article')->name('article');
+
 Route::get('/', function () {
     return view('blog.index');
 });
