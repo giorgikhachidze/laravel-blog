@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Backend\UserManagment;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
@@ -27,7 +29,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.managment.users.create', [
+            'user' => []
+        ]);
     }
 
     /**
@@ -38,7 +42,19 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
+        ]);
+
+        User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password'])
+        ]);
+
+        return redirect()->route('backend.managment.user.index');
     }
 
     /**
@@ -60,7 +76,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('backend.managment.users.edit', [
+            'user' => $user
+        ]);
     }
 
     /**
@@ -72,7 +90,18 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $validator = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
+            'password' => ['nullable', 'string', 'min:6', 'confirmed'],
+        ]);
+
+        $user->name = $request['name'];
+        $user->email = $request['email'];
+        $request['password'] == null ?: $user->password = Hash::make($request['password']);
+        $user->save();
+
+        return redirect()->route('backend.managment.user.index');
     }
 
     /**
@@ -83,6 +112,8 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return redirect()->route('backend.managment.user.index');
     }
 }

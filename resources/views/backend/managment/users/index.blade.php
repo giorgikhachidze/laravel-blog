@@ -37,9 +37,9 @@
 
                                     <a class="btn btn-primary" href="{{route('backend.managment.user.edit', $user)}}"><i class="fas fa-edit fa-fw"></i></a>
 
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#destroyModal"><i class="fas fa-trash fa-fw"></i></button>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#destroyModal-{{$user->id}}"><i class="fas fa-trash fa-fw"></i></button>
 
-                                    <div class="modal" id="destroyModal" tabindex="-1" role="dialog">
+                                    <div class="modal" id="destroyModal-{{$user->id}}" tabindex="-1" role="dialog">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                               <div class="modal-header">
