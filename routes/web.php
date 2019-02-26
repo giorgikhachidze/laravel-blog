@@ -11,22 +11,28 @@
 |
 */
 
-Route::group(['prefix'=>'backend', 'namespace'=>'Backend', 'middleware'=>['auth']], function(){
-    Route::get('/', 'DashboardController@dashboard')->name('backend.index');
-    Route::resource('/category', 'CategoryController', ['as'=>'backend']);
-    Route::resource('/article', 'ArticleController', ['as'=>'backend']);
-    Route::group(['prefix' => 'managment', 'namespace' => 'UserManagment'], function() {
-        Route::resource('/user', 'UserController', ['as' => 'backend.managment']);
-    });
+Route::get('/', function () {
+    return view('blog.index');
 });
 
 Route::get('/blog/category/{slug?}', 'BlogController@category')->name('category');
 Route::get('/blog/article/{slug?}', 'BlogController@article')->name('article');
 
-Route::get('/', function () {
-    return view('blog.index');
+Route::prefix('backend')->name('backend.')->namespace('Backend')->middleware(['auth'])->group(function(){
+    Route::get('/', 'DashboardController@dashboard')->name('dashboard');
+
+    Route::resource('/category', 'CategoryController');
+    Route::resource('/article', 'ArticleController');
+
+    Route::prefix('managment')->name('managment.')->namespace('Managment')->group(function() {
+        Route::resource('/user', 'UserController');
+    });
 });
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/register', function () {
+    Auth::logout();
+    return redirect()->intended('404');
+})->name('register');
